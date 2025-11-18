@@ -20,15 +20,15 @@ public class Calculator {
             return val1 / val2;
     }
 
-    public double rem(double val1, double val2){
+    public double rem(double val1, double val2 ){
             return val1 % val2;
     }
 
-    public double pow(double val1, double val2){
+    public double pow(double val1, double val2) {
         return Math.pow(val1, val2);
     }
 
-    public double squareRoot(double val1, double val2){
+    public double squareRoot(double val1, double val2) {
         return Math.sqrt(val1);
     }
 
@@ -36,7 +36,7 @@ public class Calculator {
         double tempResult = result;
         Scanner scanner = new Scanner(System.in);
 
-        switch(operator){
+        switch(operator) {
             case "+":
                 tempResult = this.add(val1, val2);
                 break;
@@ -94,13 +94,14 @@ public class Calculator {
             System.out.println("2. 계산 이력 보기");
             System.out.println("3. 이력 지우기");
             System.out.println("0. 종료");
-
             System.out.print("선택: ");
             answer = scanner.nextLine();
+
             if(!answer.equals("0") && !answer.equals("1") && !answer.equals("2") && !answer.equals("3")) {
                 System.out.println("해당하는 메뉴가 없습니다. 다시 입력해주세요 ");
                 continue;
             }
+
             switch(answer) {
                 case "1":
                     System.out.println("=== JAVA 계산기 ===");
@@ -179,6 +180,7 @@ public class Calculator {
 
                         System.out.print("계속 계산하시겠습니까? (y/n): ");
                         finishOp = scanner.nextLine();
+
                         if(!(finishOp.equals("n") || finishOp.equals("N") || finishOp.equals("y") || finishOp.equals("Y"))) {
                             System.out.println("y 또는 n을 입력해주세요. ");
                             continue;
@@ -204,8 +206,7 @@ public class Calculator {
                     if(tempAnswer.equals("Y") || tempAnswer.equals("y")) {
                         historyArrList.clear();
                         System.out.println("계산 이력이 삭제되었습니다.");
-                    }
-                    else {
+                    } else {
                         System.out.println("삭제를 취소하고 처음으로 돌아갑니다.");
                     }
                     System.out.println();
